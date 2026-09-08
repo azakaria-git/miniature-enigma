@@ -1,10 +1,19 @@
-﻿Console.ForegroundColor = ConsoleColor.Black;
-Console.BackgroundColor = ConsoleColor.Green;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 
-Console.Write("Hello ");
-Console.WriteLine("World!");
-Console.Write("Write your name: ");
-string name = Console.ReadLine();
-Console.Write("Good day, ");
-Console.Write(name);
-Console.WriteLine("!");
+string PathFile;
+Console.WriteLine("CSV Reader");
+
+while (true)
+{
+    Console.Write("File Path: ");
+    PathFile = Console.ReadLine();
+
+    // File Validation
+    if (File.Exists(PathFile)) break;
+
+    Console.WriteLine("File not Found!");
+}
+
+Console.Write("File Exists!");
